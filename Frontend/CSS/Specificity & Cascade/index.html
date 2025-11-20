@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity & Cascade</title>        <!--Keep it simple, you don't have to be specific-->
+    <style>
+        h1 {/*1*/    
+            color: aqua;
+        }
+        .yellow {/*10*/
+            color: yellow;
+        }
+        .cred {/*10*/
+            color: red;
+        }
+        .cpurple {/*10*/
+            color: purple;
+            /* color: violet !important; */     /*10000*/
+        }
+        [data-x = a] {/*10*/                            /* Attribute Selector*/
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="color: blue;" class="yellow cred cpurple" data-x = "a">Specificity & Cascade</h1>        <!--1000-->
+    </div>
+</body>
+</html>
+
+<!--
+1. Position and order of appearance: the order in which your CSS rules appear
+2. Specificity: an algorithm that determines which CSS selector has the strongest match
+
+Inline Style > ID Selector > Class/Attribute/Pseudo-class > Element Selector > Universal Selector
+
+Universal Selector: 0
+Element selectors and pseudo-elements: 1
+Class selectors, attribute selectors, and pseudo-classes: 10
+ID selectors: 100
+Inline styles: 1000
+!important: 10,000
+-->
