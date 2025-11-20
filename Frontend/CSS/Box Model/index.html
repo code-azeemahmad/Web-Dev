@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            background-color: aqua;
+        }
+        .box1 {
+            color: purple;
+            padding: 10px;
+            margin: 35px;
+            border: 2px solid black;
+            height: 200px;
+            box-sizing: border-box;
+        }
+        .box2 {
+            color: red;
+            padding: 10px;
+            margin: 25px;
+            border: 2px solid black;
+            height: 200px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">I am a box</div>
+    <div class="box box2">I am another box</div>
+
+
+    <!-- <a href="https://www.codewithharry.com/tutorial/css-box-model"><img width="400" src="https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/tutorial/css-box-model/box%20model.png" alt="Box Model"></a> -->
+</body>
+
+</html>
+
+<!--
+Total Width = Width + Left Padding + Right Padding + Left Border + Right Border + Left Margin + Right Margin
+Total Height = Height + Top Padding + Bottom Padding + Top Border + Bottom Border + Top Margin + Bottom Margin
+
+Total Height = 200 + 10 + 10 + 2 + 2 + 5 + 5 = 234px
+With box sixing
+Total height = height = 166 + 10 + 10 + 2 + 2 + 5 + 5 = 200px
+
+Margin Collapse:
+if two margins are overlapping, margin = max(margin1, margin2)
+-->
