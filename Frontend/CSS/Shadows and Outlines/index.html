@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows and Outlines</title>
+    <style>
+        .box {
+            border: 2px solid black;
+            /* box-shadow: offset-x offset-y blur-radius spread-radius color; */
+            width: 200px;
+            height: 100px;
+            background: white;
+            margin: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            box-sizing: border-box;
+            outline: 3px solid red;
+            outline-offset: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">I am box</div>
+</body>
+
+</html>
+
+<!--
+
+Outline vs Border (VERY IMPORTANT)
+Feature                   	Border	                              Outline
+Takes space?	    ✔ Yes (affects layout)	          ❌ No (does not affect layout)
+Position	        Drawn inside the element area	   Drawn outside the border
+Can be rounded?  	✔ Yes (border-radius works)	      ❌ No (outline ignores border-radius)
+Use cases	        Normal visual structure	           Highlighting focus/selection
+Offset available?   ❌ No	                          ✔ outline-offset moves line outward
+
+-->
