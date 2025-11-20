@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizing Units</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            font-size: 12px;
+        }
+
+        .box {
+            border: 2px solid black;
+            /* width: 1276px; */
+            width: 80vw;
+            margin: auto;
+            background-color: aquamarine;
+        }
+
+        .container {
+            border: 2px solid black;
+            width: 80vw;
+            min-height: 80vh;
+            margin: 25px auto;
+            background-color: aquamarine;
+            /* font-size: 16px; */
+        }
+
+        .container p {
+            /* font-size: 2em; */
+            /* font-size: 2rem; */
+            font-size: 2em;
+            width: 50%;
+            border: 2px solid red;
+        }
+
+        .mycont {
+            box-sizing: border-box;
+            color: rgb(0, 0, 255);
+            margin: 25px auto;
+            border: 2px solid black;
+            font-size: 22px;
+            /* width: 100vmin; */
+            width: 80vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">This is a Box</div>
+    <div class="container">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus perferendis dolores odio ullam minus
+            possimus facere quas ab voluptate quibusdam modi, unde saepe deleniti architecto tenetur provident, eaque
+            nam. Eius nam perferendis nemo eveniet tempora. Excepturi, ea nesciunt at, atque nostrum modi dolore, quidem
+            qui laborum recusandae facilis voluptate fugiat esse! Id quam sapiente aperiam quos soluta, tempora dolor,
+            corporis eum ducimus molestias necessitatibus maxime, tempore explicabo.
+        </p>
+    </div>
+    <div class="mycont">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio illo ad ducimus? Excepturi iure nihil et
+            dolorum in
+        </p>
+    </div>
+</body>
+
+</html>
+
+<!--
+1px = 196th of an inch
+-->
+<!--
+font-size property inherits from html to descendents
+-->
+<!--
+vmin = smaller of (vw, vh)
+vmax = larger of (vw, vh)
+
+Imagine your screen is:
+Width = 1200px
+Height = 800px
+Then:
+Smaller side = 800px → so 1vmin = 8px
+Larger side = 1200px → so 1vmax = 12px
+Now if screen changes (mobile, tablet), these values adjust automatically.
+-->
+
