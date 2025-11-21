@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float and Clear</title>      <!-- don't use it-->
+    <style>
+        img {
+            float: left;
+        }
+
+        .cards {
+            border: 2px solid black;
+            display: flow-root;
+        }
+        .card:nth-child(3) {
+            /* clear: right; */
+            clear: both;
+            background-color: aquamarine;
+        }
+        .card {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+        <img width="233px" src="https://www.creativeuncut.com/gallery-39/art/gi-xianyun-wish.jpg" alt="Xianyun">
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, omnis dicta! Facere natus possimus
+                modi repudiandae doloremque quisquam provident excepturi soluta? Quae reiciendis error atque at
+                doloribus deserunt sequi, cumque adipisci dignissimos praesentium harum!</p>
+        </div>
+        <div class="card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi dignissimos molestias ipsa
+            dicta qui necessitatibus eaque ratione ullam dolorum officiis ex aliquam neque cum deserunt sapiente
+            laudantium nostrum dolorem repudiandae, maxime non similique! Quod dicta odit vitae quas rem voluptatibus
+            sapiente tenetur facere. Veritatis eos, pariatur inventore expedita repellat maiores eveniet saepe incidunt
+            sed animi, distinctio nemo fugiat possimus excepturi adipisci rerum, eligendi voluptatibus quod dicta ut
+            nihil in voluptatum consequatur voluptatem. Dicta et dolore vero sapiente porro.</div>
+        <div class="card">Card 3</div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cards Gallery — Pure HTML & CSS</title>
+<style>
+  :root{
+    --bg: #f6f8fb;
+    --card-bg: #fff;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --accent: #06b6d4;
+    --gap: 1.25rem;
+    --radius: 12px;
+    --shadow: 0 8px 24px rgba(15,23,42,0.07);
+    --shadow-hover: 0 18px 40px rgba(15,23,42,0.12);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size: 16px;
+  }
+
+  /* Page layout */
+  html,body{height:100%}
+  body{
+    margin:0;
+    background: linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
+    color:#0f172a;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding: clamp(1rem, 2.5vmin, 3rem);
+    box-sizing: border-box;
+  }
+
+  header.page-head{
+    display:flex;
+    gap:var(--gap);
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom: clamp(1rem, 3vmin, 2.25rem);
+  }
+  .brand {
+    display:flex;
+    gap:.75rem;
+    align-items:center;
+  }
+  .logo {
+    width: calc(3vmin + 18px);
+    height: calc(3vmin + 18px);
+    background: linear-gradient(135deg,var(--primary),var(--accent));
+    border-radius: 10px;
+    display:grid;
+    place-items:center;
+    color: white;
+    font-weight:700;
+    font-size: .9rem;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.12);
+  }
+  h1 { font-size: clamp(1.05rem, 2.2vmin, 1.5rem); margin:0; }
+  p.lead { margin:0; color:var(--muted); font-size:.95rem; }
+
+  /* Grid */
+  .grid {
+    display:grid;
+    gap: clamp(.75rem, 2vmin, 1.25rem);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: start;
+  }
+
+  /* Card */
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform .25s ease, box-shadow .25s ease;
+    overflow: hidden;
+    display:flex;
+    flex-direction:column;
+    min-height: 220px;
+    border: 1px solid rgba(15,23,42,0.03);
+  }
+  .card:focus-within,
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card a { color: inherit; text-decoration: none; }
+
+  .card-media {
+    width:100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    overflow:hidden;
+    background: linear-gradient(180deg, rgba(37,99,235,0.12), rgba(6,182,212,0.06));
+    display:grid;
+    place-items:center;
+    margin-bottom: .8rem;
+  }
+  .card-media svg{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .card-title {
+    font-size: 1.05rem;
+    margin: 0 0 .35rem 0;
+    line-height:1.2;
+  }
+  .card-desc {
+    margin:0 0 .65rem 0;
+    color:var(--muted);
+    font-size:.95rem;
+    flex: 1 1 auto; /* allow description to grow and push footer down */
+  }
+
+  .chips { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:.6rem; }
+  .chip {
+    background: rgba(37,99,235,0.06);
+    color: #0752b6;
+    padding: .25rem .5rem;
+    font-size:.78rem;
+    border-radius: 999px;
+    border: 1px solid rgba(37,99,235,0.08);
+  }
+
+  .card-footer {
+    display:flex;
+    gap:.75rem;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:.5rem;
+  }
+  .meta { color:var(--muted); font-size:.85rem; display:flex; gap:.6rem; align-items:center; }
+
+  .btn {
+    background: linear-gradient(90deg,var(--primary),#1e66f5);
+    color: white;
+    padding: .5rem .75rem;
+    border-radius: 8px;
+    border: none;
+    font-weight:600;
+    font-size:.92rem;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    gap:.5rem;
+    align-items:center;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.12);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .18s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus { outline: 3px solid rgba(37,99,235,0.15); outline-offset: 3px; }
+
+  /* Responsive tweaks for small screens */
+  @media (max-width:520px){
+    .card { padding:.9rem; }
+    .card-title { font-size: 1rem; }
+  }
+
+  /* small utility */
+  .muted { color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+
+<header class="page-head" role="banner">
+  <div class="brand">
+    <div class="logo" aria-hidden="true">M</div>
+    <div>
+      <h1>Cards Gallery</h1>
+      <p class="lead">Pure HTML & CSS — responsive cards with hover effects</p>
+    </div>
+  </div>
+
+  <div class="muted">No JavaScript • Responsive • Accessible</div>
+</header>
+
+<main>
+  <section class="grid" aria-label="Projects cards">
+    
+    <article class="card" tabindex="0">
+      <div class="card-media" aria-hidden="true">
+        
+        <svg viewBox="0 0 600 338" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Project image">
+          <rect width="600" height="338" fill="url(#g)"/>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#dbeafe"/>
+              <stop offset="1" stop-color="#cffafe"/>
+            </linearGradient>
+          </defs>
+          <g fill="#0f172a" opacity="0.08">
+            <rect x="40" y="40" width="180" height="120" rx="10"></rect>
+            <rect x="240" y="60" width="300" height="18" rx="6"></rect>
+            <rect x="240" y="90" width="220" height="12" rx="6"></rect>
+            <rect x="240" y="110" width="260" height="12" rx="6"></rect>
+          </g>
+        </svg>
+      </div>
+
+      <h3 class="card-title">Portfolio Website</h3>
+      <p class="card-desc">A clean, responsive portfolio site to showcase projects, built with Next.js (frontend) and a headless CMS.</p>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">Responsive</span>
+      </div>
+
+      <div class="card-footer">
+        <div class="meta"><span>⭐ 4.8</span><span>•</span><span>2 days</span></div>
+        <a class="btn" href="#" role="button">View</a>
+      </div>
+    </article>
+
+    <article class="card" tabindex="0">
+      <div class="card-media" aria-hidden="true">
+        <svg viewBox="0 0 600 338" xmlns="http://www.w3.org/2000/svg" role="img">
+          <rect width="600" height="338" fill="url(#g2)"/>
+          <defs>
+            <linearGradient id="g2" x1="0" x2="1">
+              <stop offset="0" stop-color="#fde68a"/>
+              <stop offset="1" stop-color="#ffd5a6"/>
+            </linearGradient>
+          </defs>
+          <g fill="#0f172a" opacity="0.06">
+            <circle cx="120" cy="120" r="56"></circle>
+            <rect x="220" y="60" width="320" height="20" rx="6"></rect>
+            <rect x="220" y="96" width="280" height="12" rx="6"></rect>
+          </g>
+        </svg>
+      </div>
+
+      <h3 class="card-title">Blog Frontend</h3>
+      <p class="card-desc">A modern blog UI with article previews, tags, and reading modes. Optimized for Core Web Vitals.</p>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">UI</span>
+        <span class="chip">Accessibility</span>
+      </div>
+
+      <div class="card-footer">
+        <div class="meta"><span>⭐ 4.6</span><span>•</span><span>1 week</span></div>
+        <a class="btn" href="#">Live</a>
+      </div>
+    </article>
+
+    <article class="card" tabindex="0">
+      <div class="card-media" aria-hidden="true">
+        <svg viewBox="0 0 600 338" xmlns="http://www.w3.org/2000/svg" role="img">
+          <rect width="600" height="338" fill="url(#g3)"/>
+          <defs>
+            <linearGradient id="g3" x1="0" x2="1">
+              <stop offset="0" stop-color="#fce7f3"/>
+              <stop offset="1" stop-color="#e9d5ff"/>
+            </linearGradient>
+          </defs>
+          <g fill="#0f172a" opacity="0.06">
+            <rect x="36" y="46" width="520" height="18" rx="6"></rect>
+            <rect x="36" y="74" width="400" height="12" rx="6"></rect>
+            <rect x="36" y="96" width="480" height="12" rx="6"></rect>
+          </g>
+        </svg>
+      </div>
+
+      <h3 class="card-title">E-Commerce UI</h3>
+      <p class="card-desc">Product listing and checkout UI with responsive grid, filters, and accessible forms. Built for conversion.</p>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">Design</span>
+        <span class="chip">Forms</span>
+      </div>
+
+      <div class="card-footer">
+        <div class="meta"><span>⭐ 4.9</span><span>•</span><span>3 days</span></div>
+        <a class="btn" href="#">Preview</a>
+      </div>
+    </article>
+    <article class="card" tabindex="0">
+      <div class="card-media" aria-hidden="true">
+        <svg viewBox="0 0 600 338" xmlns="http://www.w3.org/2000/svg" role="img">
+          <rect width="600" height="338" fill="url(#g4)"/>
+          <defs>
+            <linearGradient id="g4" x1="0" x2="1">
+              <stop offset="0" stop-color="#d1fae5"/>
+              <stop offset="1" stop-color="#bbf7d0"/>
+            </linearGradient>
+          </defs>
+          <g fill="#0f172a" opacity="0.06">
+            <rect x="40" y="48" width="120" height="120" rx="12"></rect>
+            <rect x="180" y="56" width="360" height="16" rx="8"></rect>
+            <rect x="180" y="84" width="300" height="12" rx="8"></rect>
+          </g>
+        </svg>
+      </div>
+
+      <h3 class="card-title">Realtime Chat UI</h3>
+      <p class="card-desc">Chat list and conversation UI with typing indicator and message bubbles (frontend only). Lightweight & fast.</p>
+
+      <div class="chips" aria-hidden="true">
+        <span class="chip">UX</span>
+        <span class="chip">Realtime</span>
+      </div>
+
+      <div class="card-footer">
+        <div class="meta"><span>⭐ 4.7</span><span>•</span><span>5 days</span></div>
+        <a class="btn" href="#">Open</a>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+</body>
+</html>
+
+-->
