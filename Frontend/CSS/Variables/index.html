@@ -12,20 +12,24 @@
         body {
             background-color: black;
         }
-        :root {
-            --color: blue;
-            --secColor: purple;
+        :root {                                 /*Global Variables*/
+            --color: rgb(173, 173, 255);
+            --secColor: rgb(255, 191, 255);
         }
         ul {
-            background-color: aquamarine;
+            background-color: var(--color);
             display: flex;
             list-style: none;
         }
         ul li {
             padding: 34px;
         }
+        ul li:first-child {
+            --color: rgb(65, 255, 226);     /*Local Variable*/
+            background-color: var(--color);
+        }
         p {
-            background-color: rgb(123, 240, 255);
+            background-color: var(--secColor);
         }
     </style>
 </head>
