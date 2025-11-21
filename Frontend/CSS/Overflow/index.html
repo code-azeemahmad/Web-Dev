@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        .box {
+            width: 20vw;
+            height: 20vh;
+            border: 2px solid black;
+            /* overflow: auto; */
+            /* overflow: scroll; */
+            /* overflow: hidden; */
+            /* white-space: nowrap; */
+            /* text-overflow: ellipsis; */
+            overflow-x: auto;
+            overflow-y: hidden;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">I am a good boy and I love to write Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
+        iste error
+        reiciendis non illo architecaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaato
+        tenetur fugit eos consequuntur ipsum laboriosam voluptatibus nisi et est, ratione
+        vel molestiae nesciunt unde necessitatibus? Esse doloremque, omnis odio quidem molestias dolorum ipsum, numquam
+        odit, sapiente magni sequi cupiditate!</div>
+</body>
+
+</html>
+
+<!--
+overflow: auto;         applies scroll bar if needed
+overflow: scroll;       always a scroll bar even if there is no need
+white-space: nowrap;    horizontal scroll bar
+overflow: clip;         disables programmatically scrolling 
+-->
