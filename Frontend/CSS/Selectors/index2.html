@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS Selectors</title>
+    <style>
+        /* .box:first-child {
+            background-color: red;
+        } */
+
+        /* .box::first-line {
+            color: blueviolet;
+        } */
+
+        /* .boxes * {
+            background-color: bisque;
+        } */
+
+        /* [data-color =  "primary"] {
+            margin: 10px;
+        } */
+
+        /* a, p, .box, [data-color =  "primary"]
+        {
+            background-color: khaki;
+            padding: 5px;
+        } */
+
+        /* .box:nth-child(even) {
+            background-color: aquamarine;
+        } */
+
+        /* .box:nth-child(odd) {
+            background-color: lightskyblue;
+        } */
+        
+        /* .box:nth-last-child(1)
+        {
+            background-color: beige;
+        } */
+
+        .boxes::before {
+            content: "Azeem is good";
+        }
+
+        .boxes::after {
+            content: "Hello testing testing";
+
+            color: rgb(255, 0, 0);
+        }
+
+        ::selection {
+            color: aquamarine;
+            background-color: black;
+        }
+
+        .box::first-letter {
+            color: orange;
+            font-size: 40px;
+        }
+        
+        input::placeholder {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div class="box" data-color = "primary">Hey! I am box</div>
+        <div class="box">Hey! I am box</div>
+        <div class="box">Hey! I am box</div>
+    </div>
+    <div><input type="text" placeholder="Enter your name"></div>
+</body>
+
+</html>
+
+<!--
+.boxes::before {
+            content: "Azeem is good";
+        }
+Insert element dynamically using CSS
+-->
