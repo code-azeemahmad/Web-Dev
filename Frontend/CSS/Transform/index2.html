@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            perspective: 600px;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            background: royalblue;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+            transform-style: preserve-3d;
+        }
+
+        .box:hover {
+            transform: translateZ(-200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">3D</div>
+    </div>
+</body>
+
+</html>
+
+<!--
+Positive Z value (translateZ(+)) → element moves toward you (appears bigger)
+Negative Z value (translateZ(-)) → element moves away (appears smaller)
+-->
