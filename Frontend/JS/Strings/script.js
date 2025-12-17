@@ -1,27 +1,64 @@
-console.log("This is strings tutorial")
-let a = "Harry";
+console.log("I am learning Strings Tutorial");
+
+let a = "Azeem";
+
 console.log(a[0]);
-console.log(a[1]);
-console.log(a[2]);
-console.log(a[3]);
-console.log(a[4]);
-// console.log(a[5]);
+console.log(a[1]);      //"JavaScript is considered a forgiving or 'organic' language because 
+console.log(a[2]);      //it tries to avoid throwing errors whenever possible.
+console.log(a[3]);      //Instead, it often attempts to continue execution 
+console.log(a[4]);      //by automatically correcting or ignoring minor mistakes."
+console.log(a[5]);   
 
-console.log(a.length)
+console.log(a.length);
 
-let real_name = "Harry"
-let friend = "Rohan"
-console.log("His name is " + real_name + " and his friends name is " + friend)
-console.log(`His name is ${real_name} and his friends name is ${friend}`)
+let name1 = "Azeem";
+let name2 = "Bilal";
 
-let b = "ShivamSh"
-console.log(b.toUpperCase())
-console.log(b.toLowerCase()) 
-console.log(b.length) 
-console.log(b.slice(1, 5)) 
-console.log(b.slice(1)) 
+// Template literals using back tiks --> string interpolation
 
-console.log(b.replace("Sh", "77"))
-console.log(b.concat(a, "Aishwariya", "Rahul", "Priya"))
+console.log(`My name is ${name1} and my Friend's name is ${name2}`);
 
-console.log(b)
+// Escape sequence characters
+
+//       | Escape      | Meaning                       | Example               | Output               |
+//       | ----------- | ----------------------------- | --------------------- | -------------------- |
+//       | `\'`        | Single quote                  | `'It\'s good'`        | `It's good`          |
+//       | `\"`        | Double quote                  | `"He said \"Hi\""`    | `He said "Hi"`       |
+//       | `\\`        | Backslash                     | `"C:\\Program Files"` | `C:\Program Files`   |
+//       | `\n`        | New line                      | `"Hello\nWorld"`      | \`\`\`               |
+//       | Hello       |                               |                       |                      |
+//       | World\`\`\` |                               |                       |                      |
+
+
+// string properties
+
+console.log(a.toLowerCase()); 
+console.log(a.toUpperCase()); 
+console.log(a.length);   
+
+
+// slicing
+
+let b = "Faheem";
+
+// slice(inclusive, exclusive)
+
+console.log(b.slice(1));
+console.log(b.slice(0, 4));
+
+// replace 
+
+console.log(b.replace("F", "90"));
+console.log(b.replace("Faheem", "Afeem"));
+
+// Concatenation
+
+console.log(a.concat(b, "Cached"));
+
+// Remove White spaces
+
+let name3 = "   Nadeem   "
+console.log(name3.trim());
+
+// strings are immutable (can't be changed). 
+// You can make changes in string but the original string remains intact
