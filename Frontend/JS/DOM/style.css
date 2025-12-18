@@ -13,3 +13,13 @@ button {
     font-family: 'Arial', sans-serif;
     background-color: #d7ff46;
 }
+#old {
+    visibility: hidden;
+}
+.boxes {
+    margin: 10px;
+    border: 2px solid black;
+    background-color: bisque;
+    height: 50px;
+    width: 50px;
+}

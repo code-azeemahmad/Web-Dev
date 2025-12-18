@@ -32,3 +32,7 @@ let cont = document.body.childNodes[1];
 cont.firstChild;             // returns child nodes either text node. comment node or element node
 cont.firstElementChild;      // returns only element nodes
 cont.lastElementChild.parentNode;   // returns parent node
+
+document.querySelectorAll(".box .boxes").forEach(e => {
+    e.style.backgroundColor = "green";
+}); 
