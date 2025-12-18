@@ -24,3 +24,11 @@ old.innerHTML = "<i>mew heading</i>"
 old.innerText;       // ""
 old.textContent;     // "mew heading"
 
+document.body.childNodes;
+document.body.children;     // only element nodes
+document.body.childNodes[0];   // text node (whitespace)
+
+let cont = document.body.childNodes[1];
+cont.firstChild;             // returns child nodes either text node. comment node or element node
+cont.firstElementChild;      // returns only element nodes
+cont.lastElementChild.parentNode;   // returns parent node
